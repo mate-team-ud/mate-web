@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mate - Dating & Social Connection App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: #fff;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+    .hero img {
+      max-width: 300px;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    .hero-text {
+      max-width: 600px;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .features {
+      background: #fff;
+      color: #333;
+      padding: 3rem 2rem;
+    }
+    .features h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #ff4081;
+    }
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .feature {
+      background: #fdfdfd;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    .feature i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff4081;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff0f5;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Mate</div>
+    <div class="tagline">Dating & Social Connection App</div>
+  </header>
+
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1618221425608-1790ed01b06b?auto=format&fit=crop&w=800&q=80" alt="Couple on a date">
+    <div class="hero-text">
+      <h1>Find your Mate, Build Connections</h1>
+      <p>A modern Flutter-based dating and social connection app to help you discover love, friendship, and meaningful relationships.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>App Features</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <i class="fas fa-lock"></i>
+        <h3>Secure Authentication</h3>
+        <p>Multiple sign-in options including phone OTP, Google, and email/password with secure token handling.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-user-plus"></i>
+        <h3>Personalized Onboarding</h3>
+        <p>Step-by-step profile setup, gender and interest selection, and location-based preferences.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-camera"></i>
+        <h3>Photo Management</h3>
+        <p>Upload, crop, and manage multiple photos. Optimize your profile with ease.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-search"></i>
+        <h3>Smart Discovery</h3>
+        <p>Swipe-based matching, interest-based filtering, and location-aware profile suggestions.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mate App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
