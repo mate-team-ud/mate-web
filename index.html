@@ -7,61 +7,123 @@
   <title>Mate Connects 💖</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header, section, footer {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .features, .stories, .steps, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+    }
+    .download-btns a {
+      margin: 0 10px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff4081;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
   <header class="hero">
-    <div class="hero-text">
-      <h1>Find Your Perfect Match 💑</h1>
-      <p>India's Most Trusted Free Online Matchmaking App To Find True Love 💕</p>
-    </div>
-    <div class="hero-form">
-      <h3>Start your journey</h3>
-      <form>
-        <label for="mobile">Mobile</label><br />
-        <select id="code">
-          <option>+91</option>
-        </select>
-        <input type="text" id="mobile" name="mobile" placeholder="Enter your number" />
-        <button type="submit">Continue</button>
-        <p><a href="#">Continue with Google</a></p>
-      </form>
-    </div>
+    <h1>Mate Connects 💖</h1>
+    <p>Find your perfect match today. Swipe, chat, and fall in love! 💘</p>
   </header>
 
-  <section class="stats">
-    <div>⭐ 4.0</div>
-    <div>📦 20 MB</div>
-    <div>🔞 Rated 18+</div>
-    <div>📥 10M+ Downloads</div>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <h3>🔐 Serious Matchmaking</h3>
-      <p>Real profiles, real people</p>
-    </div>
-    <div class="feature-card">
-      <h3>📍 Nearby People</h3>
-      <p>Find matches around you</p>
-    </div>
-    <div class="feature-card">
-      <h3>🎉 Chat & Quizzes</h3>
-      <p>Fun ways to connect</p>
-    </div>
-    <div class="feature-card">
-      <h3>🧠 1:1 Counseling</h3>
-      <p>With a Human Matchmaker</p>
+  <section>
+    <h2 class="section-title">🌟 Features</h2>
+    <div class="features">
+      <div class="card">🔍 Smart Matchmaking Algorithm</div>
+      <div class="card">💬 Private & Secure Chat</div>
+      <div class="card">📍 Location Based Matching</div>
+      <div class="card">🔐 Profile Verification</div>
     </div>
   </section>
 
-  <section class="contact">
-    <h2>📬 Contact Us</h2>
-    <p>If you have any questions, reach out at <a href="mailto:mate.connects@gmail.com">mate.connects@gmail.com</a> 💌</p>
+  <section>
+    <h2 class="section-title">💞 How It Works</h2>
+    <div class="steps">
+      <div class="card">1️⃣ Create a profile</div>
+      <div class="card">2️⃣ Browse and swipe ❤️</div>
+      <div class="card">3️⃣ Start chatting and meet up 💌</div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Mate Connects ❤️ All rights reserved.</p>
+  <section>
+    <h2 class="section-title">💑 Success Stories</h2>
+    <div class="stories">
+      <div class="card">Shraddha & Sushil - Together since 2015 💍</div>
+      <div class="card">Anita & Ramesh - Found love on Mate Connects 🥰</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">📸 Preview</h2>
+    <div class="features">
+      <div class="card">Screenshot 1 Placeholder</div>
+      <div class="card">Screenshot 2 Placeholder</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">🗣️ What Our Users Say</h2>
+    <div class="testimonials">
+      <div class="card">"Amazing experience, met the love of my life!" - Neha 💖</div>
+      <div class="card">"Easy to use and very safe!" - Arjun 👍</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">📲 Download the App</h2>
+    <div class="download-btns">
+      <a href="#">App Store</a>
+      <a href="#">Play Store</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">📬 Contact</h2>
+    <p>If you have any questions, feel free to reach out to us at <a href="mailto:mate.connects@gmail.com">mate.connects@gmail.com</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Mate Connects. All rights reserved.</p>
   </footer>
 </body>
 
