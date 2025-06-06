@@ -5,9 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mate Connects 💖</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #ff4081;
+      --gradient-start: #ffdde1;
+      --gradient-end: #ee9ca7;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -15,115 +22,526 @@
       background: #fdfdfd;
       color: #333;
     }
+
     header, section, footer {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
+
     .hero {
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
     }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     .hero h1 {
-      font-size: 3rem;
-    }
-    .section-title {
-      font-size: 2rem;
+      font-size: 4rem;
       margin-bottom: 20px;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 10px auto;
+    }
+
     .features, .stories, .steps, .testimonials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 30px;
+      margin: 40px 0;
     }
+
     .card {
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
     .footer {
       text-align: center;
-      padding: 20px;
-      background: #eee;
+      padding: 40px 20px;
+      background: #f8f9fa;
+      margin-top: 60px;
     }
+
+    .download-btns {
+      text-align: center;
+      margin: 30px 0;
+    }
+
     .download-btns a {
-      margin: 0 10px;
+      margin: 10px;
       display: inline-block;
-      padding: 10px 20px;
-      background: #ff4081;
+      padding: 15px 30px;
+      background: var(--primary-color);
       color: #fff;
-      border-radius: 8px;
+      border-radius: 50px;
       text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.2);
+    }
+
+    .download-btns a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 64, 129, 0.3);
+    }
+
+    .app-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .preview-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-proof {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
     }
   </style>
 </head>
 
 <body>
-  <header class="hero">
-    <h1>Mate Connects 💖</h1>
-    <p>Find your perfect match today. Swipe, chat, and fall in love! 💘</p>
+  <header class="hero" data-aos="fade-down">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Mate Connects 💖</h1>
+        <p>Find your perfect match today. Swipe, chat, and fall in love! 💘</p>
+        <div class="social-proof">
+          <div class="stat">
+            <div class="stat-number">1M+</div>
+            <div>Active Users</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">500K</div>
+            <div>Matches Made</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">10K+</div>
+            <div>Success Stories</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/banner1.jpeg" alt="Mate Dating App" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+    </div>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2 class="section-title">🌟 Features</h2>
     <div class="features">
-      <div class="card">🔍 Smart Matchmaking Algorithm</div>
-      <div class="card">💬 Private & Secure Chat</div>
-      <div class="card">📍 Location Based Matching</div>
-      <div class="card">🔐 Profile Verification</div>
+      <div class="card">
+        <i class="fas fa-magic"></i>
+        <h3>Smart Matchmaking</h3>
+        <p>Our AI-powered algorithm finds your perfect match</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <h3>Secure Chat</h3>
+        <p>End-to-end encrypted messaging for your privacy</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location Based</h3>
+        <p>Meet people nearby and create meaningful connections</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Verified Profiles</h3>
+        <p>All profiles are manually verified for authenticity</p>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2 class="section-title">💞 How It Works</h2>
     <div class="steps">
-      <div class="card">1️⃣ Create a profile</div>
-      <div class="card">2️⃣ Browse and swipe ❤️</div>
-      <div class="card">3️⃣ Start chatting and meet up 💌</div>
+      <div class="card">
+        <i class="fas fa-user-plus"></i>
+        <h3>Create Profile</h3>
+        <p>Sign up and create your stunning profile in minutes</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-heart"></i>
+        <h3>Find Matches</h3>
+        <p>Browse profiles and swipe right on your potential matches</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-comments"></i>
+        <h3>Start Chatting</h3>
+        <p>Connect through chat and plan your first date</p>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2 class="section-title">💑 Success Stories</h2>
     <div class="stories">
-      <div class="card">Shraddha & Sushil - Together since 2015 💍</div>
-      <div class="card">Anita & Ramesh - Found love on Mate Connects 🥰</div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522073607464-c9b5fd515b02?w=400" alt="Happy Couple" class="preview-img" style="height: 200px;">
+        <h3>Shraddha & Sushil</h3>
+        <p>Together since 2015 💍</p>
+        <p>"We met on Mate Connects and instantly clicked. Now we're happily married!"</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400" alt="Happy Couple" class="preview-img" style="height: 200px;">
+        <h3>Anita & Ramesh</h3>
+        <p>Found love on Mate Connects 🥰</p>
+        <p>"Thanks to Mate Connects, we found our soulmate when we least expected it!"</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">📸 Preview</h2>
-    <div class="features">
-      <div class="card">Screenshot 1 Placeholder</div>
-      <div class="card">Screenshot 2 Placeholder</div>
+  <section data-aos="fade-up">
+    <h2 class="section-title">📸 App Preview</h2>
+    <div class="app-preview">
+      <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400" alt="App Screenshot" class="preview-img">
+      <img src="https://images.unsplash.com/photo-1621274147744-cfb5694bb233?w=400" alt="App Screenshot" class="preview-img">
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2 class="section-title">🗣️ What Our Users Say</h2>
     <div class="testimonials">
-      <div class="card">"Amazing experience, met the love of my life!" - Neha 💖</div>
-      <div class="card">"Easy to use and very safe!" - Arjun 👍</div>
+      <div class="card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Amazing experience, met the love of my life!"</p>
+        <h4>- Neha 💖</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Easy to use and very safe!"</p>
+        <h4>- Arjun 👍</h4>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">📲 Download the App</h2>
+  <section data-aos="fade-up">
+    <h2 class="section-title">📲 Download Now</h2>
     <div class="download-btns">
-      <a href="https://play.google.com/store/apps/details?id=meet.mate.app">Play Store</a>
+      <a href="https://play.google.com/store/apps/details?id=meet.mate.app">
+        <i class="fab fa-google-play"></i> Get it on Play Store
+      </a>
+      <a href="#">
+        <i class="fab fa-apple"></i> Download on App Store
+      </a>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">📬 Contact</h2>
-    <p>If you have any questions, feel free to reach out to us at <a href="mailto:mate.connects@gmail.com">mate.connects@gmail.com</a></p>
+  <section data-aos="fade-up">
+    <h2 class="section-title">📬 Contact Us</h2>
+    <div class="contact-form">
+      <form id="contactForm" onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea rows="4" id="message" placeholder="Your Message" required></textarea>
+        <div class="download-btns">
+          <button type="submit" style="width: 100%; background: var(--primary-color); color: #fff; border: none; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-family: inherit; font-size: 1rem; transition: all 0.3s ease;">Send Message</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <footer class="footer">
     <p>© 2025 Mate Connects. All rights reserved.</p>
+    <div style="margin-top: 20px;">
+      <a href="#" style="margin: 0 10px; color: #333;"><i class="fab fa-facebook"></i></a>
+      <a href="#" style="margin: 0 10px; color: #333;"><i class="fab fa-instagram"></i></a>
+      <a href="#" style="margin: 0 10px; color: #333;"><i class="fab fa-twitter"></i></a>
+    </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 
+</html>
+
+<style>
+  /* Existing styles */
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+  .hero-text, .hero-image {
+    flex: 1;
+  }
+
+  .feature-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+  }
+
+  .feature-image, .feature-content {
+    flex: 1;
+  }
+
+  .promo-section {
+    background: linear-gradient(135deg, #fff5f6, #ffe9ec);
+    padding: 60px 20px;
+    margin: 40px 0;
+  }
+
+  .promo-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .promo-text, .promo-image {
+    flex: 1;
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .hero-content, .feature-section, .promo-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .hero-image img, .feature-image img, .promo-image img {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .social-proof {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .features, .stories, .steps, .testimonials {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      padding: 20px;
+    }
+
+    .download-btns a {
+      display: block;
+      margin: 10px auto;
+      max-width: 200px;
+    }
+
+    .contact-form {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .card {
+      margin: 10px 0;
+    }
+
+    header, section, footer {
+      padding: 20px 10px;
+    }
+  }
+</style>
+
+<!-- Update the header structure -->
+<header class="hero" data-aos="fade-down">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Mate Connects 💖</h1>
+      <p>Find your perfect match today. Swipe, chat, and fall in love! 💘</p>
+      <div class="social-proof">
+        <div class="stat">
+          <div class="stat-number">1M+</div>
+          <div>Active Users</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">500K</div>
+          <div>Matches Made</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">10K+</div>
+          <div>Success Stories</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/banner1.jpeg" alt="Mate Dating App" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</header>
+
+<!-- Update the feature section structure -->
+<section data-aos="fade-up">
+  <h2 class="section-title">📱 How We Connect Hearts</h2>
+  <div class="feature-section">
+    <div class="feature-image">
+      <img src="assets/banner2.jpeg" alt="Connecting Hearts" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+    <div class="feature-content">
+      <div class="card" style="margin-bottom: 20px;">
+        <i class="fas fa-heart"></i>
+        <h3>Smart Matching</h3>
+        <p>Our AI-powered algorithm ensures you meet people who share your interests and values.</p>
+      </div>
+      <div class="card" style="margin-bottom: 20px;">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Safe & Secure</h3>
+        <p>Your privacy and security are our top priority with verified profiles and encrypted chats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Update the promo section structure -->
+<section class="promo-section" data-aos="fade-up">
+  <div class="promo-content">
+    <div class="promo-text">
+      <h2 class="section-title" style="text-align: left;">Find Your Perfect Match</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px;">Join thousands of happy couples who found love on Mate Connects. Your perfect match is just a swipe away!</p>
+      <div class="download-btns" style="text-align: left;">
+        <a href="https://play.google.com/store/apps/details?id=meet.mate.app">
+          <i class="fab fa-google-play"></i> Get it on Play Store
+        </a>
+      </div>
+    </div>
+    <div class="promo-image">
+      <img src="assets/img1.jpg" alt="Happy Couple" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</section>
+</body>
+
+</html>
+
+<script>
+function sendEmail(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  const mailtoLink = `mailto:mate.connects@gmail.com?subject=Contact Form Submission from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+  
+  window.location.href = mailtoLink;
+  
+  // Clear the form
+  document.getElementById('contactForm').reset();
+  
+  // Show success message
+  alert('Thank you for your message! Opening your email client...');
+}
+</script>
+</body>
 </html>
