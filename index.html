@@ -207,22 +207,38 @@
         <img src="banner1.jpeg" alt="Mate Dating App" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
       </div>
     </div>
-      <!-- 🔗 Social Media Links in Header -->
-      <div class="header-social" style="margin-top:30px; display:flex; gap:20px; flex-wrap:wrap;">
-        <a href="https://www.facebook.com/profile.php?id=61576837572190" target="_blank" 
-           style="display:flex; align-items:center; gap:10px; background:#1877f2; color:#fff; 
-                  padding:12px 20px; border-radius:50px; font-size:1.2rem; text-decoration:none; 
-                  box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:0.3s;">
-          <i class="fab fa-facebook" style="font-size:1.8rem;"></i> Facebook
-        </a>
+ <div className="flex items-center space-x-6">
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
+  >
+    <FaFacebook size={28} />
+    <span>Facebook</span>
+  </a>
 
-        <a href="https://www.instagram.com/mate_connect/" target="_blank" 
-           style="display:flex; align-items:center; gap:10px; background:#E4405F; color:#fff; 
-                  padding:12px 20px; border-radius:50px; font-size:1.2rem; text-decoration:none; 
-                  box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:0.3s;">
-          <i class="fab fa-instagram" style="font-size:1.8rem;"></i> Instagram
-        </a>
-      </div>
+  <a
+    href="https://twitter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
+  >
+    <FaTwitter size={28} />
+    <span>Twitter</span>
+  </a>
+
+  <a
+    href="https://instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
+  >
+    <FaInstagram size={28} />
+    <span>Instagram</span>
+  </a>
+</div>
+
     </div>
   </header>
   
