@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-play-app-signing-verification" content="abcdef1234567890">
   <title>Mate Connects 💖</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --primary-color: #ff4081;
@@ -47,6 +48,44 @@
       left: -50%;
       background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
       animation: rotate 20s linear infinite;
+    }
+
+    header {
+      background: #ff3366;
+      color: #fff;
+      padding: 30px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 1.2rem;
+    }
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #fff;
+      color: #ff3366;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+    .social-links a:hover {
+      background: #ff3366;
+      color: #fff;
+    }
+    .social-links i {
+      font-size: 1.8rem; /* bigger icon */
     }
 
     @keyframes rotate {
@@ -186,8 +225,19 @@
   <header class="hero" data-aos="fade-down">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Mate Connects 💖</h1>
-        <p>Find your perfect match today. Swipe, chat, and fall in love! 💘</p>
+    <h1>Mate Dating App</h1>
+    <p>Find your perfect match today ❤️</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    </div>
         <div class="social-proof">
           <div class="stat">
             <div class="stat-number">1M+</div>
@@ -208,39 +258,8 @@
       </div>
     </div>
     </div>
+    
   </header>
-
-   <div className="flex items-center space-x-6">
-  <a
-    href="https://facebook.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
-  >
-    <FaFacebook size={28} />
-    <span>Facebook</span>
-  </a>
-
-  <a
-    href="https://twitter.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
-  >
-    <FaTwitter size={28} />
-    <span>Twitter</span>
-  </a>
-
-  <a
-    href="https://instagram.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center space-x-2 text-white hover:text-blue-400 cursor-pointer"
-  >
-    <FaInstagram size={28} />
-    <span>Instagram</span>
-  </a>
-</div>
   
   <section data-aos="fade-up">
     <h2 class="section-title">💞 How It Works</h2>
